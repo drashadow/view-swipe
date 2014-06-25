@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <script src="index.js"></script>
+  <style>
+    .swipe-container{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .swipe-container .swipe-inner{
+      -webkit-transition: all .4s linear;
+      background-color: rgba(0,0,0,0.2);
+      height: 100%;
+    }
+  </style>
+
+</head>
+<body>
+
+  <input type="button" value="click" onclick="go()">
+  <script>
+    var elem = document.createElement('div');
+    elem.innerHTML = ':)';
+    var view1 = {elem:elem};
+
+
+    var elem2 = document.createElement('div');
+    elem2.innerHTML = ':(';
+    var view2 = {elem:elem2};
+
+
+
+
+    function go(){
+      swipe.in(view1,"left");
+      setTimeout(function(){
+        swipe.in(view2, "bottom");   
+        setTimeout(function(){
+          swipe.out("top");
+          setTimeout(function(){
+            swipe.out("right");
+          }, 1500);
+        }, 1500);   
+      }, 1500);
+    }
+
+
+    // swipe.out("left");
+    // swipe.out("left");
+  </script>
+</body>
+</html>

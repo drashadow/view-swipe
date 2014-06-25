@@ -13,7 +13,7 @@
   "keywords": [
     "swipe"
   ],
-  "engines": { 
+  "engines": {
     "node": ">=0.11.0"
   },
   "author": "iosj",
@@ -24,5 +24,14 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "cortex": {
+    "dependencies": {
+      "jquery": "^1.9.2"
+    },
+    "asyncDependencies": {},
+    "devDependencies": {},
+    "engines": {},
+    "scripts": {}
   }
 }
