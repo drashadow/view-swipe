@@ -26,9 +26,9 @@ function generateTransform(direction) {
 
 swipe.stack = [];
 
-swipe.in = function (view, direction) {
+swipe.in = function (elem, direction) {
   running = true;
-  var elem = view.elem;
+  var elem = elem;
   var container = DOC.createElement('div');
   container.setAttribute('class', 'swipe-container');
 

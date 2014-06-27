@@ -1,6 +1,6 @@
 {
   "name": "view-swipe",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The coolest cortex module.",
   "main": "index.js",
   "repository": "git://github.com/iosj/swipe.git",
@@ -8,6 +8,7 @@
     "swipe",
     "transition"
   ],
+  "css":"style.css",
   "license": "MIT",
   "author": {
     "name": "supersheep",
