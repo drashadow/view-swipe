@@ -1,5 +1,5 @@
 var swipe = {};
-exports = swipe;
+module.exports = swipe;
 
 
 var DOC = document;

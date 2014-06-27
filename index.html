@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <script src="index.js"></script>
+  <script src="neurons/neuron/6.1.1/neuron.js"></script>
+  <script src="neurons/config.js"></script>
+  <script>
+    neuron.config({
+      path:"./neurons"
+    })
+  </script>
   <style>
     .swipe-container{
       width: 100%;
@@ -25,8 +31,6 @@
 
 </head>
 <body>
-
-  <input type="button" value="click" onclick="go()">
   <script>
     var elem = document.createElement('div');
     elem.innerHTML = ':)';
@@ -37,10 +41,9 @@
     elem2.innerHTML = ':(';
     var view2 = {elem:elem2};
 
+    
 
-
-
-    function go(){
+    _use("view-swipe",function(swipe){
       swipe.in(view1,"left");
       setTimeout(function(){
         swipe.in(view2, "bottom");   
@@ -51,7 +54,7 @@
           }, 1500);
         }, 1500);   
       }, 1500);
-    }
+    });
 
 
     // swipe.out("left");
