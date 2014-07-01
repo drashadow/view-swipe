@@ -26,14 +26,36 @@ function generateTransform(direction) {
 
 swipe.stack = [];
 
-swipe.in = function (elem, direction) {
+swipe.in = function (elem, direction, duration) {
   running = true;
+  duration = duration || 300;
   var elem = elem;
   var container = DOC.createElement('div');
   container.setAttribute('class', 'swipe-container');
 
+  function appendStyle(elem, styles){
+    for(var key in styles){
+      elem.style[key] = styles[key];
+    }
+  }
+
+  appendStyle(container ,{
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    overflow: "hidden"
+  });
+
+
   var inner = DOC.createElement('div');
   inner.setAttribute('class', 'swipe-inner');
+
+  appendStyle(inner, {
+    "transition": "all " + duration / 1000 + "s linear",
+    "height": "100%"
+  });
 
   container.appendChild(inner);
   inner.appendChild(elem);
