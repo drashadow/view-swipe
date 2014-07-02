@@ -42,7 +42,7 @@ swipe.in = function (elem, direction, duration) {
   appendStyle(container ,{
     width: "100%",
     height: "100%",
-    position: "absolute",
+    position: "fixed",
     top: 0,
     left: 0,
     overflow: "hidden"
@@ -54,7 +54,8 @@ swipe.in = function (elem, direction, duration) {
 
   appendStyle(inner, {
     "transition": "all " + duration / 1000 + "s linear",
-    "height": "100%"
+    "height": "100%",
+    "overflow": "scroll"
   });
 
   container.appendChild(inner);
