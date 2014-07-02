@@ -1,6 +1,6 @@
 {
   "name": "view-swipe",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "The coolest cortex module.",
   "main": "index.js",
   "repository": "git://github.com/iosj/swipe.git",

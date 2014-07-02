@@ -32,7 +32,7 @@ swipe.in = function (elem, direction, duration) {
   var elem = elem;
   var container = DOC.createElement('div');
   container.setAttribute('class', 'swipe-container');
-
+  container.setAttribute('data-duration', duration);
   function appendStyle(elem, styles){
     for(var key in styles){
       elem.style[key] = styles[key];
@@ -69,9 +69,14 @@ swipe.in = function (elem, direction, duration) {
   swipe.stack.push(container);
 }
 
-swipe.out = function (direction) {
+swipe.out = function (direction, duration) {
   var viewElem = swipe.stack.pop();
+  var duration = duration || viewElem.getAttribute('data-duration');
   if (viewElem) {
     viewElem.querySelector('.swipe-inner').style.webkitTransform = generateTransform(direction);
   }
+  console.log(duration);
+  setTimeout(function(){
+    viewElem.parentNode.removeChild(viewElem);
+  },duration);
 }
