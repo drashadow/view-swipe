@@ -76,7 +76,6 @@ swipe.out = function (direction, duration) {
   if (viewElem) {
     viewElem.querySelector('.swipe-inner').style.webkitTransform = generateTransform(direction);
   }
-  console.log(duration);
   setTimeout(function(){
     viewElem.parentNode.removeChild(viewElem);
   },duration);
