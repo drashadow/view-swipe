@@ -72,11 +72,11 @@ swipe.in = function (elem, direction, duration) {
 
 swipe.out = function (direction, duration) {
   var viewElem = swipe.stack.pop();
-  var duration = duration || viewElem.getAttribute('data-duration');
   if (viewElem) {
+    var duration = duration || (viewElem && viewElem.getAttribute('data-duration'));
     viewElem.querySelector('.swipe-inner').style.webkitTransform = generateTransform(direction);
+    setTimeout(function(){
+      viewElem.parentNode.removeChild(viewElem);
+    },duration);
   }
-  setTimeout(function(){
-    viewElem.parentNode.removeChild(viewElem);
-  },duration);
 }
